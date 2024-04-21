@@ -1,10 +1,10 @@
 # DBRX Chatbot
 
-The open sourced AI chatbot app built with DBRX instruct API.
+DBRX Chatbot is an open-source AI chatbot application developed using the DBRX instruction API.
 
 ## Demo
 
-Visit the [DBRX Chatbot Demo Site](https://bit.ly/dbrx-chatbot)
+Visit the [DBRX Chatbot Demo Site](https://bit.ly/dbrxchatbot)
 
 ![demo](./docs/images/demo.jpg)
 
@@ -46,10 +46,10 @@ docker run -d -p 3000:3000 \
 
 Required environment variables:
 
-| Name                     | Description                                                     |
-| ------------------------ | --------------------------------------------------------------- |
-| DATABRICKS_WORKSPACE_URL | Example: `https://adb-8976439936263557.17.azuredatabricks.net`. |
-| DATABRICKS_TOKEN         | Databricks access token                                         |
+| Name                     | Description                                                                                        |
+| ------------------------ | -------------------------------------------------------------------------------------------------- |
+| DATABRICKS_WORKSPACE_URL | Your Databricks workspace URL. For example, `https://adb-3046417392244956.16.azuredatabricks.net`. |
+| DATABRICKS_TOKEN         | Your Databricks access token.                                                                      |
 
 ## Contribution
 
