@@ -4,7 +4,7 @@ DBRX Chatbot is an open-source AI chatbot application developed using the DBRX i
 
 ## Demo
 
-Visit the [DBRX Chatbot Demo Site](https://bit.ly/dbrxchatbot)
+Visit the [DBRX Chatbot Demo Site](https://dbrx.vercel.app)
 
 ![demo](./docs/images/demo.jpg)
 

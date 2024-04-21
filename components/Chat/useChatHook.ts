@@ -14,7 +14,7 @@ export const DefaultPersonas: Persona[] = [
     role: 'system',
     name: 'DBRX',
     prompt:
-      'You are DBRX, a helpful assistant designed to assist with a variety of tasks, including writing and coding',
+      'You are DBRX, a helpful assistant designed to assist with a variety of tasks, including writing and coding. You must respond in the same language as the user input',
     isDefault: true
   }
 ]
