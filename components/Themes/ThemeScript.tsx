@@ -2,11 +2,9 @@ import { memo } from 'react'
 import { ThemeProviderProps } from './interface'
 import { ColorSchemes, MEDIA } from './utils'
 
-const charMap = {
-  '<': '\\u003C',
-  '>' : '\\u003E',
-  '/': '\\u002F',
-  '\\': '\\\\',
+const charMap: { [key: string]: string } = {
+  '<': '&lt;',
+  '>': '&gt;',
   '\b': '\\b',
   '\f': '\\f',
   '\n': '\\n',
@@ -14,11 +12,12 @@ const charMap = {
   '\t': '\\t',
   '\0': '\\0',
   '\u2028': '\\u2028',
-  '\u2029': '\\u2029'
+  '\u2029': '\\u2029',
+  '\\': '\\\\'
 };
 
-function escapeUnsafeChars(str) {
-  return str.replace(/[<>\b\f\n\r\t\0\u2028\u2029\\]/g, x => charMap[x])
+function escapeUnsafeChars(str: string) {
+  return str.replace(/[<>\b\f\n\r\t\0\u2028\u2029\\]/g, x => charMap[x] || x);
 }
 
 const ThemeScript = ({
