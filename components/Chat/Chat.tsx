@@ -14,12 +14,12 @@ import ContentEditable from 'react-contenteditable'
 import toast from 'react-hot-toast'
 import { AiOutlineClear, AiOutlineLoading3Quarters, AiOutlineUnorderedList } from 'react-icons/ai'
 import { FiSend } from 'react-icons/fi'
+import sanitizeHtml from 'sanitize-html'
 import ChatContext from './chatContext'
 import type { Chat, ChatMessage } from './interface'
 import Message from './Message'
 
 import './index.scss'
-import sanitizeHtml from 'sanitize-html'
 
 export interface ChatProps {}
 

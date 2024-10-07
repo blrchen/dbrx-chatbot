@@ -5,10 +5,10 @@ import { Avatar, Flex, IconButton, Tooltip } from '@radix-ui/themes'
 import { FaRegCopy } from 'react-icons/fa'
 import { HiUser } from 'react-icons/hi'
 import { RiRobot2Line } from 'react-icons/ri'
+import sanitizeHtml from 'sanitize-html'
 import { Markdown } from '@/components'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 import { ChatMessage } from './interface'
-import sanitizeHtml from 'sanitize-html'
 
 export interface MessageProps {
   message: ChatMessage
