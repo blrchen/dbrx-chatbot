@@ -42,7 +42,7 @@ const getChatCompletionStream = async (messages: Message[]) => {
   const res = await fetch(apiUrl, {
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Basic ${apiKey}`
+      Authorization: `Bearer ${apiKey}`
     },
     method: 'POST',
     body: JSON.stringify({

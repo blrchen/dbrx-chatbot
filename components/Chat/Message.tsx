@@ -8,6 +8,7 @@ import { RiRobot2Line } from 'react-icons/ri'
 import { Markdown } from '@/components'
 import { useCopyToClipboard } from '@/hooks/useCopyToClipboard'
 import { ChatMessage } from './interface'
+import sanitizeHtml from 'sanitize-html'
 
 export interface MessageProps {
   message: ChatMessage
@@ -40,10 +41,13 @@ const Message = (props: MessageProps) => {
           <div
             className="userMessage"
             dangerouslySetInnerHTML={{
-              __html: content.replace(
-                /<(?!\/?br\/?.+?>|\/?img|\/?table|\/?thead|\/?tbody|\/?tr|\/?td|\/?th.+?>)[^<>]*>/gi,
-                ''
-              )
+              __html: sanitizeHtml(content, {
+                allowedTags: ['br', 'img', 'table', 'thead', 'tbody', 'tr', 'td', 'th'],
+                allowedAttributes: {
+                  img: ['src', 'alt'],
+                  '*': ['class']
+                }
+              })
             }}
           ></div>
         ) : (

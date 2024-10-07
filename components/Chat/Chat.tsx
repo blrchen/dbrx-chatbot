@@ -19,9 +19,7 @@ import type { Chat, ChatMessage } from './interface'
 import Message from './Message'
 
 import './index.scss'
-
-const HTML_REGULAR =
-  /<(?!img|table|\/table|thead|\/thead|tbody|\/tbody|tr|\/tr|td|\/td|th|\/th|br|\/br).*?>/gi
+import sanitizeHtml from 'sanitize-html'
 
 export interface ChatProps {}
 
@@ -70,8 +68,7 @@ const Chat = (props: ChatProps, ref: any) => {
     async (e: any) => {
       if (!isLoading) {
         e.preventDefault()
-        const input = textAreaRef.current?.innerHTML?.replace(HTML_REGULAR, '') || ''
-
+        const input = sanitizeHtml(textAreaRef.current?.innerHTML || '')
         if (input.length < 1) {
           toast.error('Please type a message to continue.')
           return
@@ -242,7 +239,7 @@ const Chat = (props: ChatProps, ref: any) => {
               html={message}
               disabled={isLoading}
               onChange={(e) => {
-                setMessage(e.target.value.replace(HTML_REGULAR, ''))
+                setMessage(sanitizeHtml(e.target.value))
               }}
               onKeyDown={(e) => {
                 handleKeypress(e)
