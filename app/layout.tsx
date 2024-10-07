@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { Toaster } from 'react-hot-toast'
 import { Header } from '@/components/Header'
 import ThemesProvider from '@/providers/ThemesProvider'
+
 import '@/styles/globals.scss'
 import '@/styles/theme-config.css'
 
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body>
         <ThemesProvider>
           <Header />
